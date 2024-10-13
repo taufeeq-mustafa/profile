@@ -1,0 +1,124 @@
+/* body{
+    margin-left: 200px; 
+    margin-right: 200px;
+    background-color: gray;
+    
+    padding: 0;
+    font-family: "Courier Prime", monospace;
+    font-weight: 400;
+    font-style: normal;
+    border: black;
+    border-radius: 10px;
+    border-style: inset;
+
+}
+
+.page{
+    background-color: white;
+    height: 100vh;
+    text-align: center;
+   
+}
+
+.page h{
+    margin-top: 20px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.projects{
+    text-align: left;
+}
+
+.list{
+    text-align: left;
+} */
+
+
+body {
+    margin-left: 200px; 
+    margin-right: 200px;
+    background-color: gray;
+    padding: 0;
+    font-family: "Courier Prime", monospace;
+    font-weight: 400;
+    font-style: normal;
+    border: black;
+    border-radius: 10px;
+    border-style: inset;
+}
+
+.page {
+    background-color: white;
+    height: 100vh;
+    text-align: center;
+}
+
+.page h {
+    margin-top: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.projects {
+    text-align: left;
+}
+
+.list {
+    text-align: left;
+}
+
+.skills span, .frame span {
+    margin-right: 10px; /* Added space between spans */
+}
+
+.occupation {
+    margin-top: 20px; /* Added space before the 'What I am working on?' section */
+}
+
+.frame{
+    margin-bottom: 20px;
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.btn {
+    background-color: #4CAF50; /* Green background */
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+/* .btn:hover {
+    background-color: #45a049; 
+} */
+
+.github-btn {
+    background-color: #333; /* GitHub black */
+}
+
+.linkedin-btn {
+    background-color: #0077b5; /* LinkedIn blue */
+}
+
+.btn a {
+    color: white;
+    text-decoration: none;
+}
