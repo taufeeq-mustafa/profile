@@ -6,12 +6,12 @@
     <title>Syed Taufeeq Mustafa — AI/ML Engineer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="page-wrapper">
 
+    <!-- NAV -->
     <nav class="nav" id="nav">
         <span class="nav-logo">STM</span>
         <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
@@ -27,60 +27,59 @@
 
     <!-- HERO -->
     <section class="hero">
-        <div class="hero-inner">
-            <p class="hero-label">// Backend AI Engineer</p>
-            <h1 class="hero-name">Syed Taufeeq<br>Mustafa</h1>
-            <p class="hero-sub">AI &nbsp;·&nbsp; NLP &nbsp;·&nbsp; RAG &nbsp;·&nbsp; GenAI &nbsp;·&nbsp; LLM &nbsp;·&nbsp; Fine-tuning</p>
-            <p class="hero-tagline">Building production-ready intelligent systems<br>in Python, FastAPI &amp; Django</p>
-            <div class="hero-actions">
-                <a href="https://github.com/taufeeq-mustafa" target="_blank" class="btn btn--white">GitHub</a>
-                <a href="https://www.linkedin.com/in/s-taufeeq-mustafa-281a13221/" target="_blank" class="btn btn--white">LinkedIn</a>
-                <a href="mailto:taufeeq.mustafa@gmail.com" class="btn btn--outline">taufeeq.mustafa@gmail.com</a>
-                <a href="Taufeeq Resume.pdf" download="Taufeeq_Mustafa_Resume.pdf" class="btn btn--outline">&#8595; Download Resume</a>
-            </div>
+        <div class="hero-eyebrow">Backend AI Engineer &nbsp;·&nbsp; Karachi, Pakistan</div>
+        <h1 class="hero-name">Syed<br>Taufeeq<br>Mustafa</h1>
+        <div class="hero-pills">
+            <span>AI</span><span>NLP</span><span>RAG</span><span>GenAI</span><span>LLM</span><span>Fine-tuning</span>
+        </div>
+        <p class="hero-tagline">Building production-ready intelligent<br>systems in Python, FastAPI &amp; Django</p>
+        <div class="hero-actions">
+            <a href="https://github.com/taufeeq-mustafa" target="_blank" class="btn btn--yellow">GitHub ↗</a>
+            <a href="https://www.linkedin.com/in/s-taufeeq-mustafa-281a13221/" target="_blank" class="btn btn--white">LinkedIn ↗</a>
+            <a href="mailto:taufeeq.mustafa@gmail.com" class="btn btn--ghost">taufeeq.mustafa@gmail.com</a>
+            <a href="Taufeeq Resume.pdf" download="Taufeeq_Mustafa_Resume.pdf" class="btn btn--red">↓ Resume</a>
         </div>
     </section>
 
     <!-- ABOUT -->
     <section id="about" class="section">
         <div class="container">
-            <h2 class="section-title">01. About</h2>
+            <div class="section-label red">01</div>
+            <h2 class="section-heading">About Me</h2>
             <div class="about-grid">
                 <div class="about-text">
                     <p>
                         AI/ML Engineer with hands-on experience shipping production-ready intelligent systems in
-                        <strong>Python, FastAPI, and Django</strong>. Skilled in LLM integration
+                        <mark class="mark-yellow">Python, FastAPI, and Django</mark>. Skilled in LLM integration
                         (Anthropic, OpenAI), fine-tuning, RAG pipelines, and vector embeddings with
-                        <strong>LangChain on GCP Vertex AI</strong>.
+                        <mark class="mark-blue">LangChain on GCP Vertex AI</mark>.
                     </p>
                     <p>
-                        Strong backend foundation on <strong>AWS (S3, SES, RDS)</strong> with Redis
+                        Strong backend foundation on <mark class="mark-pink">AWS (S3, SES, RDS)</mark> with Redis
                         caching, secure API design, and Salesforce integration — proven delivery of multi-tenant
                         SaaS platforms with AI-powered insights engines.
                     </p>
                     <div class="edu-block">
-                        <span class="edu-icon">//</span>
-                        <span>
-                            B.Sc. Software Engineering &mdash; Sir Syed University of Engineering and Technology, Karachi
-                            &nbsp;|&nbsp; Sep 2021 – Aug 2025
-                        </span>
+                        <span class="edu-badge">EDU</span>
+                        <span>B.Sc. Software Engineering — Sir Syed University of Engineering and Technology, Karachi &nbsp;|&nbsp; Sep 2021 – Aug 2025</span>
                     </div>
                 </div>
                 <div class="contact-card">
+                    <div class="contact-card-header">Contact</div>
                     <div class="contact-row">
-                        <span class="contact-label">phone</span>
+                        <span class="contact-label">Phone</span>
                         <span>+92 335 266 9000</span>
                     </div>
                     <div class="contact-row">
-                        <span class="contact-label">email</span>
+                        <span class="contact-label">Email</span>
                         <a href="mailto:taufeeq.mustafa@gmail.com">taufeeq.mustafa@gmail.com</a>
                     </div>
                     <div class="contact-row">
-                        <span class="contact-label">github</span>
+                        <span class="contact-label">GitHub</span>
                         <a href="https://github.com/taufeeq-mustafa" target="_blank">taufeeq-mustafa</a>
                     </div>
                     <div class="contact-row">
-                        <span class="contact-label">location</span>
+                        <span class="contact-label">Location</span>
                         <span>Karachi, Pakistan</span>
                     </div>
                 </div>
@@ -89,37 +88,44 @@
     </section>
 
     <!-- EXPERIENCE -->
-    <section id="experience" class="section section--stripe">
+    <section id="experience" class="section section--dark">
         <div class="container">
-            <h2 class="section-title">02. Experience</h2>
+            <div class="section-label yellow">02</div>
+            <h2 class="section-heading white">Experience</h2>
             <div class="accordion">
 
                 <div class="acc-item open">
                     <button class="acc-header" onclick="toggleAcc(this)">
-                        <span>Backend AI Engineer &nbsp;&mdash;&nbsp; 1PERCENTLABS</span>
+                        <div class="acc-title-wrap">
+                            <span class="acc-role">Backend AI Engineer</span>
+                            <span class="acc-company">1PERCENTLABS</span>
+                        </div>
                         <span class="acc-icon">−</span>
                     </button>
                     <div class="acc-body">
                         <p class="acc-meta">Jan 2026 – Present &nbsp;·&nbsp; Karachi, Pakistan</p>
                         <ul class="bullets">
-                            <li>Integrated <strong>Anthropic Claude (claude-opus-4-6)</strong> with web search tooling and Crunchbase API enrichment to build the PRISM AI scoring engine across Technical Feasibility, Risk, Budget, and Timeframe dimensions; implemented a 7-day Redis cache layer reducing redundant LLM calls by <strong>50%</strong>.</li>
-                            <li>Designed an invoice management system with <strong>AWS S3 presigned URL</strong> upload/download flows and a client-facing dispute workflow with AWS SES email notifications.</li>
-                            <li>Architected a <strong>Salesforce-triggered account merge system</strong> integrating Apex triggers with Django REST endpoints via API-key auth and idempotency checks.</li>
+                            <li>Integrated <strong>Anthropic Claude (claude-opus-4-6)</strong> with web search tooling and Crunchbase API enrichment to build the PRISM AI scoring engine across Technical Feasibility, Risk, Budget, and Timeframe dimensions; 7-day Redis cache layer reduced LLM calls by <strong>50%</strong>.</li>
+                            <li>Designed invoice management system with <strong>AWS S3 presigned URL</strong> flows and client-facing dispute workflow with AWS SES notifications.</li>
+                            <li>Architected a <strong>Salesforce-triggered account merge system</strong> integrating Apex triggers with Django REST endpoints and idempotency checks.</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="acc-item">
                     <button class="acc-header" onclick="toggleAcc(this)">
-                        <span>Artificial Intelligence Trainee &nbsp;&mdash;&nbsp; WENAWA</span>
+                        <div class="acc-title-wrap">
+                            <span class="acc-role">Artificial Intelligence Trainee</span>
+                            <span class="acc-company">WENAWA</span>
+                        </div>
                         <span class="acc-icon">+</span>
                     </button>
                     <div class="acc-body">
                         <p class="acc-meta">Oct 2025 – Dec 2025 &nbsp;·&nbsp; Karachi, Pakistan</p>
                         <ul class="bullets">
-                            <li>Packaged a <strong>LangChain-based RAG pipeline</strong> (Llama-3 + FAISS vector store) into a FastAPI + Docker microservice handling ~500 daily queries with avg response time under <strong>1.5s</strong>.</li>
-                            <li>Built a Python pipeline (pandas, spaCy, NLTK) ingesting ~50K raw customer reviews to produce a labeled dataset for sentiment-model training.</li>
-                            <li>Performed EDA on <strong>100K+ records</strong> in pandas/matplotlib/seaborn, surfacing class imbalances and data-quality issues.</li>
+                            <li>Packaged a <strong>LangChain RAG pipeline</strong> (Llama-3 + FAISS) into a FastAPI + Docker microservice handling ~500 daily queries under <strong>1.5s</strong> avg response time.</li>
+                            <li>Built Python pipeline (pandas, spaCy, NLTK) ingesting ~50K customer reviews to produce labeled dataset for sentiment-model training.</li>
+                            <li>EDA on <strong>100K+ records</strong> in pandas/matplotlib/seaborn, surfacing class imbalances and data-quality issues.</li>
                         </ul>
                     </div>
                 </div>
@@ -131,79 +137,72 @@
     <!-- PROJECTS -->
     <section id="projects" class="section">
         <div class="container">
-            <h2 class="section-title">03. Projects</h2>
+            <div class="section-label blue">03</div>
+            <h2 class="section-heading">Projects</h2>
             <div class="projects-grid">
 
-                <div class="project-card">
+                <div class="project-card" style="--card-color: #E8132A;">
                     <div class="project-top">
                         <span class="project-tag">FYP · NLP</span>
                         <span class="project-date">Aug 2025</span>
                     </div>
                     <h3>NLP-Based Talking Therapy Platform</h3>
-                    <p>Fine-tuned facebook/blenderbot-400M-distill on a synthetic dataset for therapeutic responses. Integrated LangChain vector store embeddings for context-aware multi-session continuity via FastAPI.</p>
+                    <p>Fine-tuned blenderbot-400M on synthetic dataset for therapeutic responses. LangChain vector embeddings for multi-session continuity via FastAPI.</p>
                     <div class="stack-tags">
-                        <span>Python</span><span>FastAPI</span><span>LangChain</span><span>NLP</span><span>Fine-tuning</span><span>HuggingFace</span>
+                        <span>Python</span><span>FastAPI</span><span>LangChain</span><span>NLP</span><span>Fine-tuning</span>
                     </div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card" style="--card-color: #0047FF;">
                     <div class="project-top">
                         <span class="project-tag">Hackathon · Google APAC</span>
                         <span class="project-date">May 2025</span>
                     </div>
                     <h3>HunarShehar</h3>
-                    <p>Deployed AI agentic model on Google Vertex AI with the Google Agent Development Kit for personalized onboarding. Built Gemini-powered bilingual microlessons and role-play simulations, enhancing engagement by 30%.</p>
+                    <p>AI agentic model on Vertex AI with Google ADK for personalized onboarding. Gemini-powered bilingual microlessons boosted engagement by 30%.</p>
                     <div class="stack-tags">
                         <span>GCP Vertex AI</span><span>Gemini</span><span>ADK</span><span>AI Agents</span>
                     </div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card" style="--card-color: #FFD600;">
                     <div class="project-top">
                         <span class="project-tag">AI</span>
                         <a href="https://github.com/taufeeq-mustafa/Price-Negotiator" target="_blank" class="project-link">↗</a>
                     </div>
                     <h3>Price Negotiator</h3>
                     <p>AI-powered price negotiation system with intelligent bargaining logic.</p>
-                    <div class="stack-tags">
-                        <span>Python</span><span>AI</span>
-                    </div>
+                    <div class="stack-tags"><span>Python</span><span>AI</span></div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card" style="--card-color: #12B76A;">
                     <div class="project-top">
                         <span class="project-tag">Full Stack</span>
                         <a href="https://github.com/taufeeq-mustafa/Notes-App" target="_blank" class="project-link">↗</a>
                     </div>
                     <h3>Notes App</h3>
-                    <p>Full-stack notes application on the MERN stack with authentication and CRUD operations.</p>
-                    <div class="stack-tags">
-                        <span>MongoDB</span><span>Express</span><span>React</span><span>Node.js</span>
-                    </div>
+                    <p>Full-stack MERN notes application with auth and CRUD operations.</p>
+                    <div class="stack-tags"><span>MongoDB</span><span>Express</span><span>React</span><span>Node.js</span></div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card" style="--card-color: #FF2D9A;">
                     <div class="project-top">
                         <span class="project-tag">Java</span>
                         <a href="https://github.com/taufeeq-mustafa/Criminal-Record-Management-System" target="_blank" class="project-link">↗</a>
                     </div>
                     <h3>Criminal Record Management</h3>
-                    <p>Enterprise record management system with CRUD, reporting, and role-based access control.</p>
-                    <div class="stack-tags">
-                        <span>Java</span>
-                    </div>
+                    <p>Enterprise record management system with CRUD, reporting, and RBAC.</p>
+                    <div class="stack-tags"><span>Java</span></div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card" style="--card-color: #FF6B2B;">
                     <div class="project-top">
                         <span class="project-tag">Enterprise</span>
                         <a href="https://github.com/taufeeq-mustafa/DotNet-CRUD" target="_blank" class="project-link">↗</a>
                     </div>
                     <h3>Student Management System</h3>
                     <p>Full-stack student management platform with .NET backend and Angular frontend.</p>
-                    <div class="stack-tags">
-                        <span>.NET</span><span>Angular</span><span>SQL</span>
-                    </div>
+                    <div class="stack-tags"><span>.NET</span><span>Angular</span><span>SQL</span></div>
                 </div>
 
             </div>
@@ -211,48 +210,49 @@
     </section>
 
     <!-- SKILLS -->
-    <section id="skills" class="section section--stripe">
+    <section id="skills" class="section section--yellow">
         <div class="container">
-            <h2 class="section-title">04. Skills</h2>
+            <div class="section-label dark">04</div>
+            <h2 class="section-heading">Skills</h2>
             <div class="skills-grid">
 
                 <div class="skill-group">
-                    <h4>Languages</h4>
+                    <h4><span class="skill-num red">—</span> Languages</h4>
                     <div class="skill-tags">
                         <span>Python</span><span>SQL</span><span>JavaScript</span><span>TypeScript</span><span>Java</span>
                     </div>
                 </div>
 
                 <div class="skill-group">
-                    <h4>AI / ML</h4>
+                    <h4><span class="skill-num blue">—</span> AI / ML</h4>
                     <div class="skill-tags">
                         <span>LLM Integration</span><span>RAG</span><span>Fine-tuning</span><span>LangChain</span><span>NLP</span><span>AI Agents</span><span>Embeddings</span><span>FAISS</span>
                     </div>
                 </div>
 
                 <div class="skill-group">
-                    <h4>Frameworks &amp; Tools</h4>
+                    <h4><span class="skill-num pink">—</span> Frameworks &amp; Tools</h4>
                     <div class="skill-tags">
                         <span>FastAPI</span><span>Django</span><span>Node.js</span><span>Docker</span><span>Git</span><span>Jupyter</span><span>Redis</span>
                     </div>
                 </div>
 
                 <div class="skill-group">
-                    <h4>Cloud</h4>
+                    <h4><span class="skill-num green">—</span> Cloud</h4>
                     <div class="skill-tags">
                         <span>AWS S3</span><span>AWS SES</span><span>AWS RDS</span><span>GCP Vertex AI</span>
                     </div>
                 </div>
 
                 <div class="skill-group">
-                    <h4>Integrations</h4>
+                    <h4><span class="skill-num orange">—</span> Integrations</h4>
                     <div class="skill-tags">
                         <span>Anthropic Claude</span><span>OpenAI</span><span>Salesforce</span><span>Stripe</span><span>Crunchbase API</span>
                     </div>
                 </div>
 
                 <div class="skill-group">
-                    <h4>Certifications</h4>
+                    <h4><span class="skill-num red">—</span> Certifications</h4>
                     <div class="skill-tags">
                         <span>AI for Devs — DataCamp</span><span>OOP — Coursera (UC San Diego)</span>
                     </div>
@@ -264,16 +264,18 @@
 
     <!-- FOOTER -->
     <footer class="footer">
-        <div class="footer-links">
-            <a href="https://github.com/taufeeq-mustafa" target="_blank">GitHub</a>
-            <a href="https://www.linkedin.com/in/s-taufeeq-mustafa-281a13221/" target="_blank">LinkedIn</a>
-            <a href="mailto:taufeeq.mustafa@gmail.com">Email</a>
-            <a href="tel:+923352669000">+92 335 266 9000</a>
+        <div class="footer-inner">
+            <p class="footer-tagline">Let's build something intelligent.</p>
+            <div class="footer-links">
+                <a href="https://github.com/taufeeq-mustafa" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/s-taufeeq-mustafa-281a13221/" target="_blank">LinkedIn</a>
+                <a href="mailto:taufeeq.mustafa@gmail.com">Email</a>
+                <a href="tel:+923352669000">+92 335 266 9000</a>
+            </div>
+            <p class="footer-copy">© 2026 All rights reserved.</p>
         </div>
-        <p class="footer-copy">&copy; 2026 All rights reserved.</p>
     </footer>
 
-</div><!-- end page-wrapper -->
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
