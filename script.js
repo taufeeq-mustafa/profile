@@ -14,6 +14,15 @@ $('#theme-toggle').addEventListener('click', () => {
     localStorage.setItem('theme', root.dataset.theme);
 });
 
+/* ---------- copy email on "let's talk" ---------- */
+$('#copy-email').addEventListener('click', async (e) => {
+    e.preventDefault();
+    await navigator.clipboard.writeText('taufeeq.mustafa@gmail.com');
+    const el = e.currentTarget;
+    el.innerHTML = '<strong>email copied ✓</strong>';
+    setTimeout(() => { el.innerHTML = '<strong>let\'s talk</strong>'; }, 1500);
+});
+
 /* ---------- blog data ---------- */
 let posts = null; // [{slug, title, date, summary, cover?}]
 
@@ -63,7 +72,7 @@ async function renderPost(slug) {
         const meta = list.find(p => p.slug === slug);
         if (!meta) { showView('404'); return; }
         const html = await (await fetch(`posts/${slug}.html`)).text();
-        document.title = `${meta.title} — Taufeeq Mustafa`;
+        document.title = `${meta.title} | Taufeeq Mustafa`;
         el.innerHTML = `<h1>${meta.title}</h1><div class="post-meta">${meta.date}</div>` + html;
     } catch {
         el.innerHTML = '<p class="muted">Could not load post.</p>';
@@ -73,7 +82,7 @@ async function renderPost(slug) {
 function route() {
     const hash = location.hash.replace(/^#\/?/, ''); // '' | 'about' | 'blog' | 'blog/slug'
     const [page, slug] = hash.split('/');
-    document.title = 'Syed Taufeeq Mustafa — AI/ML Engineer';
+    document.title = 'Syed Taufeeq Mustafa | AI/ML Engineer';
     if (!page) { showView('home'); return; }
     if (page === 'blog' && slug) { showView('post'); renderPost(slug); return; }
     if (page === 'blog') { showView('blog'); renderBlogList(); return; }

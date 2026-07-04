@@ -9,7 +9,7 @@
 </ul>
 
 <h2>2. Cache aggressively</h2>
-<p>LLM calls are the expensive part. A Redis layer keyed on normalized queries cut costs dramatically — in a related project, a 7-day cache reduced LLM calls by <strong>50%</strong>.</p>
+<p>LLM calls are the expensive part. A Redis layer keyed on normalized queries cut costs dramatically. In a related project, a 7-day cache reduced LLM calls by <strong>50%</strong>.</p>
 <pre><code>key = f"rag:{sha256(normalize(query))}"
 if cached := redis.get(key):
     return cached</code></pre>
