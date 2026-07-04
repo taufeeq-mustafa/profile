@@ -1,5 +1,5 @@
 /* ============================================
-   Router + CLI + Markdown blog
+   Router + theme + Markdown blog
    ============================================ */
 
 const $ = (sel) => document.querySelector(sel);
@@ -7,13 +7,12 @@ const views = document.querySelectorAll('.view');
 
 /* ---------- theme ---------- */
 const root = document.documentElement;
-root.dataset.theme = localStorage.getItem('theme') || 'dark';
+root.dataset.theme = localStorage.getItem('theme') || 'light';
 
-function toggleTheme() {
+$('#theme-toggle').addEventListener('click', () => {
     root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
     localStorage.setItem('theme', root.dataset.theme);
-}
-$('#theme-toggle').addEventListener('click', toggleTheme);
+});
 
 /* ---------- blog data ---------- */
 let posts = null; // [{slug, title, date, summary, cover?}]
@@ -102,7 +101,7 @@ function showView(name) {
     });
     if (!found) showView('404');
     document.querySelectorAll('.topnav a').forEach(a =>
-        a.classList.toggle('active', a.getAttribute('href') === `#/${name}`));
+        a.classList.toggle('active', a.getAttribute('href') === (name === 'home' ? '#/' : `#/${name}`)));
     window.scrollTo(0, 0);
 }
 
@@ -110,7 +109,7 @@ async function renderBlogList() {
     const el = $('#blog-list');
     try {
         const list = await loadPosts();
-        if (!list.length) { el.innerHTML = '<p class="muted mono">no posts yet.</p>'; return; }
+        if (!list.length) { el.innerHTML = '<p class="muted">No posts yet.</p>'; return; }
         el.innerHTML = list.map(p => `
             <a class="card blog-item" href="#/blog/${p.slug}">
                 ${p.cover ? `<img class="blog-cover" src="${p.cover}" alt="" loading="lazy">` : ''}
@@ -119,13 +118,13 @@ async function renderBlogList() {
                 <p>${p.summary || ''}</p>
             </a>`).join('');
     } catch {
-        el.innerHTML = '<p class="muted mono">could not load posts (serve the site over http, not file://).</p>';
+        el.innerHTML = '<p class="muted">Could not load posts (serve the site over http, not file://).</p>';
     }
 }
 
 async function renderPost(slug) {
     const el = $('#post-content');
-    el.innerHTML = '<p class="muted mono">loading…</p>';
+    el.innerHTML = '<p class="muted">Loading…</p>';
     try {
         const list = await loadPosts();
         const meta = list.find(p => p.slug === slug);
@@ -134,7 +133,7 @@ async function renderPost(slug) {
         document.title = `${meta.title} — Taufeeq Mustafa`;
         el.innerHTML = `<h1>${meta.title}</h1><div class="post-meta">${meta.date}</div>` + renderMarkdown(md);
     } catch {
-        el.innerHTML = '<p class="muted mono">could not load post.</p>';
+        el.innerHTML = '<p class="muted">Could not load post.</p>';
     }
 }
 
@@ -149,97 +148,3 @@ function route() {
 }
 window.addEventListener('hashchange', route);
 route();
-
-/* ---------- CLI ---------- */
-const input = $('#cli-input');
-const output = $('#cli-output');
-const history = [];
-let histIdx = -1;
-
-const commands = {
-    help: () => [
-        'commands:',
-        '  home | about | experience | projects | skills | blog',
-        '  open <n|slug>   open blog post by number or slug',
-        '  theme           toggle dark/light',
-        '  resume          download resume',
-        '  github | linkedin | email',
-        '  clear           clear output',
-    ].join('\n'),
-    home:       () => { location.hash = '#/'; return 'cd ~'; },
-    about:      () => { location.hash = '#/about'; return 'cd ~/about'; },
-    experience: () => { location.hash = '#/experience'; return 'cd ~/experience'; },
-    exp:        () => commands.experience(),
-    projects:   () => { location.hash = '#/projects'; return 'cd ~/projects'; },
-    skills:     () => { location.hash = '#/skills'; return 'cd ~/skills'; },
-    blog:       () => { location.hash = '#/blog'; return 'cd ~/blog'; },
-    theme:      () => { toggleTheme(); return `theme: ${root.dataset.theme}`; },
-    resume:     () => { window.open('Taufeeq Resume.pdf'); return 'opening resume…'; },
-    github:     () => { window.open('https://github.com/taufeeq-mustafa'); return 'opening github…'; },
-    linkedin:   () => { window.open('https://www.linkedin.com/in/s-taufeeq-mustafa-281a13221/'); return 'opening linkedin…'; },
-    email:      () => { location.href = 'mailto:taufeeq.mustafa@gmail.com'; return 'taufeeq.mustafa@gmail.com'; },
-    whoami:     () => 'Syed Taufeeq Mustafa — Backend AI Engineer, Karachi',
-    clear:      () => { output.hidden = true; output.textContent = ''; return null; },
-    ls:         () => 'home  about  experience  projects  skills  blog',
-    open: async (arg) => {
-        if (!arg) return 'usage: open <number|slug>  (see blog page for posts)';
-        const list = await loadPosts().catch(() => []);
-        const post = /^\d+$/.test(arg) ? list[Number(arg) - 1] : list.find(p => p.slug === arg);
-        if (!post) return `no post: ${arg}`;
-        location.hash = `#/blog/${post.slug}`;
-        return `opening ${post.slug}…`;
-    },
-};
-
-function print(text, cls = '') {
-    output.hidden = false;
-    const span = document.createElement('span');
-    if (cls) span.className = cls;
-    span.textContent = text + '\n';
-    output.appendChild(span);
-    output.scrollTop = output.scrollHeight;
-}
-
-async function run(raw) {
-    const line = raw.trim();
-    if (!line) return;
-    print(`❯ ${line}`);
-    const [cmd, ...args] = line.toLowerCase().split(/\s+/);
-    const fn = commands[cmd];
-    if (!fn) { print(`command not found: ${cmd} — try 'help'`, 'err'); return; }
-    const result = await fn(args.join(' '));
-    if (result) print(result, 'ok');
-}
-
-input.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') {
-        const val = input.value;
-        input.value = '';
-        if (val.trim()) { history.push(val); histIdx = history.length; }
-        run(val);
-    } else if (e.key === 'ArrowUp') {
-        if (histIdx > 0) input.value = history[--histIdx];
-        e.preventDefault();
-    } else if (e.key === 'ArrowDown') {
-        input.value = histIdx < history.length - 1 ? history[++histIdx] : (histIdx = history.length, '');
-        e.preventDefault();
-    } else if (e.key === 'Tab') {
-        e.preventDefault();
-        const partial = input.value.toLowerCase();
-        if (!partial) return;
-        const match = Object.keys(commands).filter(c => c.startsWith(partial));
-        if (match.length === 1) input.value = match[0] + ' ';
-        else if (match.length > 1) print(match.join('  '));
-    } else if (e.key === 'Escape') {
-        input.blur();
-    }
-});
-
-// '/' or Ctrl+K focuses the CLI from anywhere
-document.addEventListener('keydown', (e) => {
-    if (e.target === input) return;
-    if (e.key === '/' || (e.ctrlKey && e.key === 'k')) {
-        e.preventDefault();
-        input.focus();
-    }
-});

@@ -1,27 +1,31 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Syed Taufeeq Mustafa — AI/ML Engineer</title>
     <meta name="description" content="Backend AI Engineer — LLMs, RAG, FastAPI, Django. Portfolio & data science blog.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- TOP BAR -->
-    <header class="topbar">
-        <a href="#/" class="logo">taufeeq<span class="logo-accent">@portfolio</span><span class="cursor-blink">▊</span></a>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-top">
+            <a href="#/" class="logo">TAUFEEQ<span class="logo-sub">MUSTAFA</span></a>
+            <div class="header-user">
+                <a href="mailto:taufeeq.mustafa@gmail.com">taufeeq.mustafa@gmail.com</a>
+                <span class="sep">|</span>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme" title="Toggle theme">◐</button>
+            </div>
+        </div>
         <nav class="topnav">
-            <a href="#/about">about</a>
-            <a href="#/experience">experience</a>
-            <a href="#/projects">projects</a>
-            <a href="#/skills">skills</a>
-            <a href="#/blog">blog</a>
-            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme" title="Toggle theme (or type: theme)">◐</button>
+            <a href="#/">HOME</a>
+            <a href="#/about">ABOUT</a>
+            <a href="#/experience">EXPERIENCE</a>
+            <a href="#/projects">PROJECTS</a>
+            <a href="#/skills">SKILLS</a>
+            <a href="#/blog">BLOG</a>
         </nav>
     </header>
 
@@ -29,12 +33,13 @@
 
         <!-- HOME -->
         <section class="view" data-view="home">
-            <div class="hero">
-                <p class="hero-eyebrow mono">$ whoami</p>
-                <h1 class="hero-name">Syed Taufeeq Mustafa</h1>
+            <div class="hero roundbox">
+                <div class="caption">→ Pay attention</div>
+                <div class="hero-body">
+                <h1 class="hero-name"><span class="lgm">S</span>yed Taufeeq Mustafa</h1>
                 <p class="hero-role">Backend AI Engineer · Karachi, Pakistan</p>
                 <p class="hero-tagline">Building production-ready intelligent systems in Python, FastAPI &amp; Django. LLM integration, RAG pipelines, fine-tuning.</p>
-                <div class="hero-pills mono">
+                <div class="hero-pills">
                     <span>AI</span><span>NLP</span><span>RAG</span><span>GenAI</span><span>LLM</span><span>Fine-tuning</span>
                 </div>
                 <div class="hero-actions">
@@ -42,38 +47,38 @@
                     <a href="https://www.linkedin.com/in/s-taufeeq-mustafa-281a13221/" target="_blank" class="btn">LinkedIn ↗</a>
                     <a href="Taufeeq Resume.pdf" download="Taufeeq_Mustafa_Resume.pdf" class="btn btn--accent">↓ Resume</a>
                 </div>
-                <p class="hero-hint mono">Tip: press <kbd>/</kbd> and type <code>help</code> to navigate by command.</p>
+                </div>
             </div>
         </section>
 
         <!-- ABOUT -->
         <section class="view" data-view="about" hidden>
-            <h2 class="view-title mono"><span class="prompt">$</span> cat about.md</h2>
+            <h2 class="view-title">→ About me</h2>
             <div class="prose">
                 <p>AI/ML Engineer with hands-on experience shipping production-ready intelligent systems in <strong>Python, FastAPI, and Django</strong>. Skilled in LLM integration (Anthropic, OpenAI), fine-tuning, RAG pipelines, and vector embeddings with <strong>LangChain on GCP Vertex AI</strong>.</p>
                 <p>Strong backend foundation on <strong>AWS (S3, SES, RDS)</strong> with Redis caching, secure API design, and Salesforce integration — proven delivery of multi-tenant SaaS platforms with AI-powered insights engines.</p>
             </div>
             <div class="card">
-                <h3 class="card-label mono">education</h3>
+                <h3 class="card-label">education</h3>
                 <p><strong>B.Sc. Software Engineering</strong> — Sir Syed University of Engineering and Technology, Karachi<br><span class="muted">Sep 2021 – Aug 2025</span></p>
             </div>
             <div class="card">
-                <h3 class="card-label mono">contact</h3>
-                <div class="kv"><span class="mono muted">email</span><a href="mailto:taufeeq.mustafa@gmail.com">taufeeq.mustafa@gmail.com</a></div>
-                <div class="kv"><span class="mono muted">phone</span><span>+92 335 266 9000</span></div>
-                <div class="kv"><span class="mono muted">github</span><a href="https://github.com/taufeeq-mustafa" target="_blank">taufeeq-mustafa</a></div>
-                <div class="kv"><span class="mono muted">location</span><span>Karachi, Pakistan</span></div>
+                <h3 class="card-label">contact</h3>
+                <div class="kv"><span class="muted">email</span><a href="mailto:taufeeq.mustafa@gmail.com">taufeeq.mustafa@gmail.com</a></div>
+                <div class="kv"><span class="muted">phone</span><span>+92 335 266 9000</span></div>
+                <div class="kv"><span class="muted">github</span><a href="https://github.com/taufeeq-mustafa" target="_blank">taufeeq-mustafa</a></div>
+                <div class="kv"><span class="muted">location</span><span>Karachi, Pakistan</span></div>
             </div>
         </section>
 
         <!-- EXPERIENCE -->
         <section class="view" data-view="experience" hidden>
-            <h2 class="view-title mono"><span class="prompt">$</span> git log --experience</h2>
+            <h2 class="view-title">→ Experience</h2>
 
             <article class="card">
                 <div class="card-head">
                     <h3>Backend AI Engineer <span class="at">@ 1PERCENTLABS</span></h3>
-                    <span class="mono muted">Jan 2026 – Present</span>
+                    <span class="muted">Jan 2026 – Present</span>
                 </div>
                 <ul class="bullets">
                     <li>Integrated <strong>Anthropic Claude</strong> with web search tooling and Crunchbase API enrichment to build the PRISM AI scoring engine across Technical Feasibility, Risk, Budget, and Timeframe dimensions; 7-day Redis cache layer reduced LLM calls by <strong>50%</strong>.</li>
@@ -85,7 +90,7 @@
             <article class="card">
                 <div class="card-head">
                     <h3>AI Trainee <span class="at">@ WENAWA</span></h3>
-                    <span class="mono muted">Oct 2025 – Dec 2025</span>
+                    <span class="muted">Oct 2025 – Dec 2025</span>
                 </div>
                 <ul class="bullets">
                     <li>Packaged a <strong>LangChain RAG pipeline</strong> (Llama-3 + FAISS) into a FastAPI + Docker microservice handling ~500 daily queries under <strong>1.5s</strong> avg response time.</li>
@@ -97,85 +102,75 @@
 
         <!-- PROJECTS -->
         <section class="view" data-view="projects" hidden>
-            <h2 class="view-title mono"><span class="prompt">$</span> ls projects/</h2>
+            <h2 class="view-title">→ Projects</h2>
             <div class="grid">
                 <article class="card">
-                    <div class="card-head"><h3>NLP Talking Therapy Platform</h3><span class="tag mono">FYP · NLP</span></div>
+                    <div class="card-head"><h3>NLP Talking Therapy Platform</h3><span class="tag">FYP · NLP</span></div>
                     <p>Fine-tuned blenderbot-400M on a synthetic dataset for therapeutic responses. LangChain vector embeddings for multi-session continuity via FastAPI.</p>
-                    <p class="stack mono">Python · FastAPI · LangChain · Fine-tuning</p>
+                    <p class="stack">Python · FastAPI · LangChain · Fine-tuning</p>
                 </article>
                 <article class="card">
-                    <div class="card-head"><h3>HunarShehar</h3><span class="tag mono">Google APAC Hackathon</span></div>
+                    <div class="card-head"><h3>HunarShehar</h3><span class="tag">Google APAC Hackathon</span></div>
                     <p>AI agentic model on Vertex AI with Google ADK for personalized onboarding. Gemini-powered bilingual microlessons boosted engagement by 30%.</p>
-                    <p class="stack mono">Vertex AI · Gemini · ADK · Agents</p>
+                    <p class="stack">Vertex AI · Gemini · ADK · Agents</p>
                 </article>
                 <article class="card">
-                    <div class="card-head"><h3><a href="https://github.com/taufeeq-mustafa/Price-Negotiator" target="_blank">Price Negotiator ↗</a></h3><span class="tag mono">AI</span></div>
+                    <div class="card-head"><h3><a href="https://github.com/taufeeq-mustafa/Price-Negotiator" target="_blank">Price Negotiator ↗</a></h3><span class="tag">AI</span></div>
                     <p>AI-powered price negotiation system with intelligent bargaining logic.</p>
-                    <p class="stack mono">Python · AI</p>
+                    <p class="stack">Python · AI</p>
                 </article>
                 <article class="card">
-                    <div class="card-head"><h3><a href="https://github.com/taufeeq-mustafa/Notes-App" target="_blank">Notes App ↗</a></h3><span class="tag mono">Full Stack</span></div>
+                    <div class="card-head"><h3><a href="https://github.com/taufeeq-mustafa/Notes-App" target="_blank">Notes App ↗</a></h3><span class="tag">Full Stack</span></div>
                     <p>Full-stack MERN notes application with auth and CRUD operations.</p>
-                    <p class="stack mono">MongoDB · Express · React · Node</p>
+                    <p class="stack">MongoDB · Express · React · Node</p>
                 </article>
                 <article class="card">
-                    <div class="card-head"><h3><a href="https://github.com/taufeeq-mustafa/Criminal-Record-Management-System" target="_blank">Criminal Record Management ↗</a></h3><span class="tag mono">Java</span></div>
+                    <div class="card-head"><h3><a href="https://github.com/taufeeq-mustafa/Criminal-Record-Management-System" target="_blank">Criminal Record Management ↗</a></h3><span class="tag">Java</span></div>
                     <p>Enterprise record management system with CRUD, reporting, and RBAC.</p>
-                    <p class="stack mono">Java</p>
+                    <p class="stack">Java</p>
                 </article>
                 <article class="card">
-                    <div class="card-head"><h3><a href="https://github.com/taufeeq-mustafa/DotNet-CRUD" target="_blank">Student Management System ↗</a></h3><span class="tag mono">Enterprise</span></div>
+                    <div class="card-head"><h3><a href="https://github.com/taufeeq-mustafa/DotNet-CRUD" target="_blank">Student Management System ↗</a></h3><span class="tag">Enterprise</span></div>
                     <p>Full-stack student management platform with .NET backend and Angular frontend.</p>
-                    <p class="stack mono">.NET · Angular · SQL</p>
+                    <p class="stack">.NET · Angular · SQL</p>
                 </article>
             </div>
         </section>
 
         <!-- SKILLS -->
         <section class="view" data-view="skills" hidden>
-            <h2 class="view-title mono"><span class="prompt">$</span> pip list --skills</h2>
+            <h2 class="view-title">→ Skills</h2>
             <div class="grid">
-                <div class="card"><h3 class="card-label mono">languages</h3><p class="stack mono">Python · SQL · JavaScript · TypeScript · Java</p></div>
-                <div class="card"><h3 class="card-label mono">ai / ml</h3><p class="stack mono">LLM Integration · RAG · Fine-tuning · LangChain · NLP · AI Agents · Embeddings · FAISS</p></div>
-                <div class="card"><h3 class="card-label mono">frameworks &amp; tools</h3><p class="stack mono">FastAPI · Django · Node.js · Docker · Git · Jupyter · Redis</p></div>
-                <div class="card"><h3 class="card-label mono">cloud</h3><p class="stack mono">AWS S3 · AWS SES · AWS RDS · GCP Vertex AI</p></div>
-                <div class="card"><h3 class="card-label mono">integrations</h3><p class="stack mono">Anthropic Claude · OpenAI · Salesforce · Stripe · Crunchbase API</p></div>
-                <div class="card"><h3 class="card-label mono">certifications</h3><p class="stack mono">AI for Devs — DataCamp · OOP — Coursera (UCSD)</p></div>
+                <div class="card"><h3 class="card-label">languages</h3><p class="stack">Python · SQL · JavaScript · TypeScript · Java</p></div>
+                <div class="card"><h3 class="card-label">ai / ml</h3><p class="stack">LLM Integration · RAG · Fine-tuning · LangChain · NLP · AI Agents · Embeddings · FAISS</p></div>
+                <div class="card"><h3 class="card-label">frameworks &amp; tools</h3><p class="stack">FastAPI · Django · Node.js · Docker · Git · Jupyter · Redis</p></div>
+                <div class="card"><h3 class="card-label">cloud</h3><p class="stack">AWS S3 · AWS SES · AWS RDS · GCP Vertex AI</p></div>
+                <div class="card"><h3 class="card-label">integrations</h3><p class="stack">Anthropic Claude · OpenAI · Salesforce · Stripe · Crunchbase API</p></div>
+                <div class="card"><h3 class="card-label">certifications</h3><p class="stack">AI for Devs — DataCamp · OOP — Coursera (UCSD)</p></div>
             </div>
         </section>
 
         <!-- BLOG LIST -->
         <section class="view" data-view="blog" hidden>
-            <h2 class="view-title mono"><span class="prompt">$</span> ls blog/</h2>
-            <div id="blog-list" class="blog-list"><p class="muted mono">loading posts…</p></div>
+            <h2 class="view-title">→ Blog</h2>
+            <div id="blog-list" class="blog-list"><p class="muted">loading posts…</p></div>
         </section>
 
         <!-- BLOG POST -->
         <section class="view" data-view="post" hidden>
-            <p class="mono"><a href="#/blog" class="back-link">← cd ../blog</a></p>
+            <p><a href="#/blog" class="back-link">← Back to blog</a></p>
             <article id="post-content" class="prose post-body"></article>
         </section>
 
         <!-- 404 -->
         <section class="view" data-view="404" hidden>
-            <h2 class="view-title mono"><span class="prompt">$</span> 404</h2>
-            <p class="prose">Nothing here. Type <code>help</code> in the command bar, or <a href="#/">go home</a>.</p>
+            <h2 class="view-title">→ 404</h2>
+            <p class="prose">Nothing here. <a href="#/">Go home</a>.</p>
         </section>
 
     </main>
 
-    <!-- CLI BAR -->
-    <div class="cli" id="cli">
-        <div class="cli-output mono" id="cli-output" hidden></div>
-        <div class="cli-row mono">
-            <span class="prompt">❯</span>
-            <input id="cli-input" type="text" autocomplete="off" spellcheck="false"
-                   placeholder="type a command… (help)" aria-label="Command input">
-        </div>
-    </div>
-
-    <footer class="footer mono">
+    <footer class="footer">
         <span>© 2026 Syed Taufeeq Mustafa</span>
         <span><a href="https://github.com/taufeeq-mustafa" target="_blank">github</a> · <a href="https://www.linkedin.com/in/s-taufeeq-mustafa-281a13221/" target="_blank">linkedin</a> · <a href="mailto:taufeeq.mustafa@gmail.com">email</a></span>
     </footer>
