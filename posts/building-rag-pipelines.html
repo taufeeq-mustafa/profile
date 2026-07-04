@@ -1,0 +1,22 @@
+<p>Retrieval-Augmented Generation looks simple on a whiteboard: embed documents, store vectors, retrieve top-k, stuff them into a prompt. Shipping it to real users is where the interesting problems start. Here are the lessons from packaging a LangChain RAG pipeline (Llama-3 + FAISS) into a FastAPI microservice handling ~500 daily queries.</p>
+
+<h2>1. Chunking strategy matters more than the model</h2>
+<p>Most retrieval failures I debugged traced back to bad chunks, not a bad LLM.</p>
+<ul>
+    <li>Fixed-size chunks split sentences mid-thought and poison retrieval.</li>
+    <li>Recursive splitting on headings/paragraphs kept semantic units intact.</li>
+    <li>Small overlap (10–15%) fixed most "answer was in the next chunk" misses.</li>
+</ul>
+
+<h2>2. Cache aggressively</h2>
+<p>LLM calls are the expensive part. A Redis layer keyed on normalized queries cut costs dramatically — in a related project, a 7-day cache reduced LLM calls by <strong>50%</strong>.</p>
+<pre><code>key = f"rag:{sha256(normalize(query))}"
+if cached := redis.get(key):
+    return cached</code></pre>
+
+<h2>3. Measure retrieval separately from generation</h2>
+<p>If you only look at final answers, you can't tell whether retrieval or generation failed. Log the retrieved chunks with every response and spot-check them weekly.</p>
+<blockquote><p>The model can't answer from context it never received.</p></blockquote>
+
+<h2>What's next</h2>
+<p>I'm experimenting with hybrid search (BM25 + dense vectors) and reranking. If that changes the picture, it'll be the next post.</p>

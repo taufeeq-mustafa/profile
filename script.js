@@ -24,73 +24,6 @@ async function loadPosts() {
     return posts;
 }
 
-/* ---------- tiny markdown renderer ----------
-   ponytail: covers headings, lists, code, images, links, bold/italic,
-   blockquotes. Swap for marked.js if posts outgrow it. */
-function escapeHtml(s) {
-    return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-}
-
-function inlineMd(s) {
-    return s
-        .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" loading="lazy">')
-        .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>')
-        .replace(/`([^`]+)`/g, '<code>$1</code>')
-        .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
-        .replace(/\*([^*]+)\*/g, '<em>$1</em>');
-}
-
-function renderMarkdown(md) {
-    const lines = md.split(/\r?\n/);
-    const out = [];
-    let list = null;   // 'ul' | 'ol'
-    let para = [];
-
-    const closeList = () => { if (list) { out.push(`</${list}>`); list = null; } };
-    const closePara = () => {
-        if (para.length) { out.push(`<p>${inlineMd(para.join(' '))}</p>`); para = []; }
-    };
-
-    for (let i = 0; i < lines.length; i++) {
-        const line = lines[i];
-
-        // fenced code block
-        if (line.startsWith('```')) {
-            closePara(); closeList();
-            const code = [];
-            i++;
-            while (i < lines.length && !lines[i].startsWith('```')) code.push(lines[i++]);
-            out.push(`<pre><code>${escapeHtml(code.join('\n'))}</code></pre>`);
-            continue;
-        }
-
-        const h = line.match(/^(#{1,3})\s+(.*)/);
-        if (h) {
-            closePara(); closeList();
-            out.push(`<h${h[1].length}>${inlineMd(h[2])}</h${h[1].length}>`);
-            continue;
-        }
-        if (/^>\s?/.test(line)) {
-            closePara(); closeList();
-            out.push(`<blockquote><p>${inlineMd(line.replace(/^>\s?/, ''))}</p></blockquote>`);
-            continue;
-        }
-        const ul = line.match(/^[-*]\s+(.*)/);
-        const ol = line.match(/^\d+\.\s+(.*)/);
-        if (ul || ol) {
-            closePara();
-            const type = ul ? 'ul' : 'ol';
-            if (list !== type) { closeList(); out.push(`<${type}>`); list = type; }
-            out.push(`<li>${inlineMd((ul || ol)[1])}</li>`);
-            continue;
-        }
-        if (line.trim() === '') { closePara(); closeList(); continue; }
-        para.push(line.trim());
-    }
-    closePara(); closeList();
-    return out.join('\n');
-}
-
 /* ---------- views ---------- */
 function showView(name) {
     let found = false;
@@ -129,9 +62,9 @@ async function renderPost(slug) {
         const list = await loadPosts();
         const meta = list.find(p => p.slug === slug);
         if (!meta) { showView('404'); return; }
-        const md = await (await fetch(`posts/${slug}.md`)).text();
+        const html = await (await fetch(`posts/${slug}.html`)).text();
         document.title = `${meta.title} — Taufeeq Mustafa`;
-        el.innerHTML = `<h1>${meta.title}</h1><div class="post-meta">${meta.date}</div>` + renderMarkdown(md);
+        el.innerHTML = `<h1>${meta.title}</h1><div class="post-meta">${meta.date}</div>` + html;
     } catch {
         el.innerHTML = '<p class="muted">Could not load post.</p>';
     }
