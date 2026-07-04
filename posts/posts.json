@@ -1,0 +1,8 @@
+[
+    {
+        "slug": "building-rag-pipelines",
+        "title": "Lessons from Building Production RAG Pipelines",
+        "date": "2026-07-04",
+        "summary": "What I learned shipping a LangChain + FAISS retrieval pipeline that serves ~500 queries a day: chunking, caching, and the parts nobody warns you about."
+    }
+]
