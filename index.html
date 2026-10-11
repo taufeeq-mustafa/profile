@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Syed Taufeeq Mustafa | AI/ML Engineer</title>
     <meta name="description" content="Syed Taufeeq Mustafa, AI Engineer who ships. Production LLM systems, RAG pipelines, and backend platforms in Python, FastAPI & Django.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -26,6 +29,7 @@
             <a href="#/projects">PROJECTS</a>
             <a href="#/skills">SKILLS</a>
             <a href="#/books">BOOKS</a>
+            <a href="#/game">GAME</a>
             <a href="#/blog">BLOG</a>
         </nav>
     </header>
@@ -185,6 +189,31 @@
                 -->
             </div>
             <p class="muted">Nothing here yet. Check back soon.</p>
+        </section>
+
+        <!-- GAME -->
+        <section class="view" data-view="game" hidden>
+            <h2 class="view-title">→ Game</h2>
+            <div class="roundbox">
+                <div class="caption">→ Sudoku</div>
+                <div class="game-body">
+                    <div class="sudoku-bar">
+                        <select id="sudoku-diff" aria-label="Difficulty">
+                            <option value="35">Easy</option>
+                            <option value="45" selected>Medium</option>
+                            <option value="55">Hard</option>
+                        </select>
+                        <button id="sudoku-new" class="btn">New game</button>
+                        <span class="muted" id="sudoku-status"></span>
+                    </div>
+                    <div id="sudoku-grid" class="sudoku-grid" tabindex="0" aria-label="Sudoku grid"></div>
+                    <div class="sudoku-pad" id="sudoku-pad">
+                        <button>1</button><button>2</button><button>3</button><button>4</button><button>5</button>
+                        <button>6</button><button>7</button><button>8</button><button>9</button><button>✕</button>
+                    </div>
+                    <p class="muted game-help">Click a cell, then type 1-9 (or use the pad). <kbd>Backspace</kbd> clears. Fill the grid with no conflicts to win.</p>
+                </div>
+            </div>
         </section>
 
         <!-- BLOG LIST -->
